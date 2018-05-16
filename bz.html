@@ -67,9 +67,20 @@ console.log(arr3);
 const arr = [...arr3];
 console.log(arr);
 console.log([...new Set(arr3)]);
+// Highter order function
+
+function Add1(x) {
+  console.log(Add1);
+  return function (y) {
+    console.log(x,y);
+    return x + y;
+  }
+}
+console.log(Add1(6)(7));
 
 const Add = x => y => x+y;
-
+console.log(Add(10));
+console.log(Add(10)(20))
 
 
 
