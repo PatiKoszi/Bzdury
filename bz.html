@@ -56,37 +56,85 @@
 //
  //console.log(Math.max(...[-4,-12,-52,-1]));
 
-    const arr1 = [1,2,3];
-    const arr2 = [4,5,6];
+//    const arr1 = [1,2,3];
+//    const arr2 = [4,5,6];
+//
+//    arr1.push(...arr2);
+//    console.log(arr1);
+//
+//const arr3 = [7,3,1,3,3,7,58];
+//console.log(arr3);
+//const arr = [...arr3];
+//console.log(arr);
+//console.log([...new Set(arr3)]);
+//!!!!// Highter order function
+//
+//function Add1(x) {
+//  console.log(Add1);
+//  return function (y) {
+//    console.log(x,y);
+//    return x + y;
+//  }
+//}
+//console.log(Add1(6)(7));
+//
+//const Add = x => y => x+y;
+//console.log(Add(10));
+//console.log(Add(10)(20))
 
-    arr1.push(...arr2);
-    console.log(arr1);
-
-const arr3 = [7,3,1,3,3,7,58];
-console.log(arr3);
-const arr = [...arr3];
-console.log(arr);
-console.log([...new Set(arr3)]);
-// Highter order function
-
-function Add1(x) {
-  console.log(Add1);
-  return function (y) {
-    console.log(x,y);
-    return x + y;
-  }
-}
-console.log(Add1(6)(7));
-
-const Add = x => y => x+y;
-console.log(Add(10));
-console.log(Add(10)(20))
+// !!! Tworzenie konstruktora objektu patrz F12
+//
+    //function PlayerKiller(name, age, skill){
+    // this.name = name;
+    // this.age = age;
+    // this.skill = skill;
+    //}
+//
+    //PlayerKiller.prototype.sayHi = function () {
+    //   console.log('I am ' + (this.name) + ' age ' + this.age + ' my skills ' + this.skill);
+    //}
+//
+    //const Patryk = new PlayerKiller("Patryk",38, "fast")
+    //console.log(Patryk)
+    //console.log(Patryk.sayHi())
+//
 
 
 
 
 
+//function makePlayerKiller(name, age, skill) {
+//  var result = Object.create({
+//    sayHi: function () {
+//          console.log('I am ' + (this.name) + ' age ' + this.age + ' my skills ' + this.skill);
+//      },
+//    constructor: makePlayerKiller
+//  })
+//
+//  result.name = name
+//  result.age = age
+//  result.skill = skill
+//
+//  return result
+//}
+//
+//console.log(makePlayerKiller('Bartosz', 4000, 'JS'))
 
+
+    function forEach(array, action) {
+      for (var i=0; i<array.length; i++) {
+        action(array[i]) }
+    }
+    forEach([1,3,6,5,8], console.log)
+
+    const consoleAll = array => forEach(array, console.log)
+
+    consoleAll([1, 2, 3])
+
+    const consoleMap = mappingFunction => array => forEach(array, mappingFunction)
+
+    const consoleDoubleAll = consoleMap(x => console.log(x * 2))
+    consoleDoubleAll([1, 2, 3])
 
 
 
