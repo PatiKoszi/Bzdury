@@ -136,30 +136,24 @@
     const consoleDoubleAll = consoleMap(x => console.log(x * 2))
     consoleDoubleAll([1, 2, 3])
 
-    const tab = [10,20,30];
+    const tab = [10,21,30];
     console.log(tab);
     const tab1= tab.map(function (value) {
       return value *2;
       console.log(value*2);
     })
+    const tab2 = tab.filter(function (value) {
+      return value % 3 === 0
+    })
     console.log(tab1);
+    console.log(tab2)
 
+    const data = [[2,3,5], [56,25,36], [5,8,78]];
+    const flatArray = data.reduce(function (total, amount) {
+      return total.concat(amount);
+    }, []);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    console.log(flatArray);
 
 
 
@@ -171,11 +165,15 @@
 
 
 </script>
+
+<div>
+    <br>
+    <input type="text" name="inputText" id="inputText" placeholder="Pole testowe">
+
+</div>
 </body>
 </html>
 
-[1,20,31,4,5,6].reduce(function(max, next, index, all){
-return next }, 0)
 
 
 
